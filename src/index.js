@@ -1,29 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const TodoList = () => {
-    return (
-        <ul>
-            <li>Test</li>
-            <li>a</li>
-        </ul>
-    )
-}
-
-const AppHeader = () => {
-    return <h1>My Todo List</h1>
-}
-
-const SearchPanel = () => {
-    return <input placeholder="search" />
-}
+import AppHeader from "./components/app-header";
+import SearchPanel from "./components/search-pannel";
+import TodoList from "./components/todo-list";
 
 const App = () => {
+
+    const todoData = [
+        {label: 'test', important: false, id: 1},
+        {label: 'this', important: true, id: 2},
+        {label: 'thing', important: false, id: 3},
+    ]
+
     return (
         <div>
             <AppHeader />
             <SearchPanel />
-            <TodoList />
+            <TodoList todos={todoData}/>
         </div>
     )
 }
